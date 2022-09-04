@@ -1,0 +1,117 @@
+.container form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 30rem;
+  font-weight: bold;
+  left: 6rem;
+}
+.container form textarea {
+  height: 5rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+.container input {
+  margin-bottom: 1rem;
+  height: 2.5rem;
+  border-radius: 0.8rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+.container input:hover {
+  background-color: 1px solid rgb(100, 100, 100);
+  color: rgb(100, 100, 100);
+  cursor: pointer;
+}
+::-webkit-input-placeholder {
+  color: black;
+}
+::-webkit-input-placeholder:hover {
+  color: rgb(100, 100, 100);
+}
+.container form label {
+  font-size: 1.5rem;
+  padding: 1rem;
+  font-weight: bold;
+}
+.container {
+  height: 50rem;
+  display: flex;
+  margin-top: 10rem;
+  justify-content: center;
+  align-items: center;
+}
+.formbtn {
+  position: relative;
+  top: 2rem;
+  height: 2.5rem;
+  background: transparent;
+  border-radius: 2rem;
+  font-weight: bold;
+  animation-name: animleave;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+}
+.formbtn:hover {
+  animation-name: animover;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+}
+.details {
+  position: relative;
+  right: 6rem;
+  text-align: left;
+}
+.details p {
+  text-align: left;
+}
+.details h2 {
+  position: absolute;
+  top: -6rem;
+}
+.details h3 {
+  font-size: 1rem;
+}
+.details h3:hover {
+  color: rgb(44, 44, 44);
+}
+.details a:hover {
+  cursor: pointer;
+}
+@media only screen and (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+  }
+  .details {
+    right: 0;
+    left: 0;
+  }
+  .container form {
+    left: 0rem;
+    width: 18rem;
+    bottom: 1rem;
+  }
+}
+@keyframes animover {
+  0% {
+    color: black;
+    background-color: transparent;
+  }
+
+  100% {
+    color: white;
+    background-color: black;
+  }
+}
+@keyframes animleave {
+  0% {
+    color: white;
+    background-color: black;
+  }
+
+  100% {
+    color: black;
+    background-color: transparent;
+  }
+}

@@ -1,0 +1,129 @@
+.container {
+  width: 15rem;
+  height: 22rem;
+  box-shadow: 5px -1px 39px 19px rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+}
+.container:hover {
+  box-shadow: 0px -2px 30px 11px rgba(0, 0, 0, 0.25);
+}
+.container:hover .imagebackground img {
+  opacity: 0.9;
+}
+.container:hover .nameline {
+  animation: blackout 0.3s linear;
+  animation-fill-mode: forwards;
+  background-color: #3e497abc;
+}
+.container:hover .buybtn {
+  animation: blackout 0.3s linear;
+  animation-fill-mode: forwards;
+  background-color: #3e497abc;
+}
+.imagebackground img {
+  position: relative;
+  width: 11rem;
+  height: 11rem;
+  top: -2.5rem;
+}
+.nameline {
+  position: relative;
+  background-color: #3e497a;
+  color: #fff;
+  top: -1.3rem;
+  animation: appear 0.3s linear;
+}
+.imagebackground {
+  position: relative;
+  background-color: #a8d5e272;
+}
+.buydetails {
+  position: absolute;
+  border: none;
+  font-size: 2rem;
+}
+.optionscontainer {
+  position: absolute;
+  height: 5rem;
+  top: -8rem;
+  padding-bottom: 8rem;
+  display: flex;
+  display: none;
+  animation: fade-in 0.2s linear;
+  animation-fill-mode: forwards;
+}
+
+.buybtn {
+  background-color: #3e497a;
+  color: #fff;
+  font-weight: bold;
+  position: relative;
+  border: none;
+  border-radius: 0.3rem;
+  padding: 0.5rem 0.7rem;
+  animation: appear 0.3s linear;
+  margin-right: 6rem;
+  cursor: pointer;
+}
+.buybtn:hover {
+  background-color: #3e497abd;
+}
+.numberproduct {
+  position: relative;
+  width: 2rem;
+  height: 1.7rem;
+  font-size: 1.5rem;
+}
+.pricetag {
+  position: relative;
+  top: -2rem;
+  margin: 0;
+  left: 30%;
+  transform: translateX(-30%);
+}
+.visible {
+  display: block;
+}
+@media only screen and (max-width: 1024px) {
+  .container {
+    width: 12rem;
+    height: 22rem;
+    margin-right: 2rem;
+  }
+  .buybtn {
+    margin-right: 4rem;
+  }
+  .nameline h3 {
+    font-size: 0.9rem;
+  }
+}
+@keyframes blackout {
+  from {
+    color: #fff;
+    background-color: #3e497a;
+  }
+  to {
+    color: black;
+    background-color: #3e497aaf;
+  }
+}
+@keyframes appear {
+  from {
+    color: black;
+    background-color: #3e497aaf;
+  }
+  to {
+    color: #fff;
+    background-color: #3e497a;
+  }
+}
+@keyframes fade-in {
+  from {
+    top: -8.5rem;
+    opacity: 0;
+  }
+  to {
+    top: -8rem;
+    opacity: 1;
+  }
+}

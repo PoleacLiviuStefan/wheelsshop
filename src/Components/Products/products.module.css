@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Montserrat:wght@100&family=Open+Sans:wght@300&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Public+Sans:wght@300;400&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto:wght@900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+.container {
+  scrollbar-color: red green;
+  display: flex;
+  position: relative;
+  top: 100%;
+  cursor: pointer;
+  overflow: auto;
+  white-space: nowrap;
+  background-color: #fff;
+  width: 100%;
+  height: 45rem;
+  z-index: 2;
+  scroll-padding: 20px;
+}
+.container::-webkit-scrollbar {
+  width: 0;
+  height: 1rem;
+  height: 0.8rem;
+  z-index: 99;
+  scrollbar-width: thin;
+}
+.container::-webkit-scrollbar-thumb {
+  background: #646464;
+  border-radius: 1rem;
+  width: 10px;
+  border: 4px solid rgba(0, 0, 0, 0);
+}
+.container::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #f2f2f2;
+  border-radius: 0px;
+  margin-block: 25px;
+}
+.card {
+  margin-left: 2rem;
+  left: 50%;
+}
+.wheelsarea {
+  display: flex;
+  position: absolute;
+
+  top: 30%;
+}
+.container h1 {
+  margin-left: 2rem;
+  font-size: 3rem;
+  font-weight: 700;
+  position: sticky;
+  left: 2rem;
+}
+@media only screen and (max-width: 1024px) {
+  .container h1 {
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,48 @@
+.container {
+  width: 100%;
+  height: 40rem;
+  overflow: hidden;
+  background-repeat: none;
+  background-size: cover;
+  background-position: sticky;
+}
+.imgdescription {
+  position: relative;
+
+  color: white;
+  z-index: 1;
+
+  top: 30rem;
+  height: 10em;
+  font-weight: 200;
+  width: 100%;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 10%,
+    rgba(0, 0, 0, 0.851) 100%
+  );
+}
+.imgdescription h3 {
+  position: absolute;
+
+  font-size: 3rem;
+  left: 50%;
+  font-weight: 500;
+  bottom: 3%;
+  transform: translate(-50%, -3%);
+}
+.container form button {
+  height: 5rem;
+}
+@media only screen and (max-width: 1024px) {
+  .container {
+    height: 20rem;
+  }
+  .imgdescription {
+    top: 10rem;
+  }
+  .imgdescription h3 {
+    font-size: 1.5rem;
+  }
+}

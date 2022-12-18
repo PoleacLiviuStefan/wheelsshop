@@ -10,11 +10,13 @@ import {
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Cart from "../Buycart/Cart";
+import { useSelector } from 'react-redux'
 
 export default function Navbar() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [showlist, setshowlist] = useState(false);
   const [mobileVisible, setMobileVisible] = useState(false);
+  const {carts}=useSelector(item=>item.user || {})
   const handleScroll = () => {
     const position = window.pageYOffset;
     setScrollPosition(position);
@@ -30,6 +32,7 @@ export default function Navbar() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  
   const mobileMenu = () => {
     setMobileVisible((prev) => !prev);
   };
@@ -60,10 +63,13 @@ export default function Navbar() {
           </div>
           <div onClick={appearlist} className={styles.element}>
             {" "}
+            <div>
+            <div className={localStorage.getItem("productsNumber")==0 ? styles.notshow:styles.itemsnumber } >{cartscarts.length}</div>
             <FontAwesomeIcon className="font-awesome" icon={faCartPlus} />{" "}
+            </div>  
           </div>
           <div className={showlist ? { opacity: 1 } : styles.hidden}>
-            <Cart />
+            <Cart phone={false} />
           </div>
         </div>
       </div>
@@ -98,6 +104,16 @@ export default function Navbar() {
                 <a>CONTACT</a>
               </Link>
             </div>
+            <div onClick={appearlist} className={styles.cartphone}>
+            {" "}
+            <div>
+            <div className={localStorage.getItem("productsNumber")==0 ? styles.notshow:styles.itemsnumbermobile } >{localStorage.getItem("productsNumber")}</div>
+            <FontAwesomeIcon className="font-awesome" icon={faCartPlus} />{" "}
+            </div>  
+          </div>
+          <div className={showlist ? styles.cartlistphone : styles.hidden}>
+            <Cart phone={true}/>
+          </div>
           </div>
         </div>
       </div>

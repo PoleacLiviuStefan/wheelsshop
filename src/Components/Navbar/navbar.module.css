@@ -41,6 +41,15 @@
   cursor: pointer;
   color: #fff;
 }
+.cartphone{
+  margin-top:.7rem;
+  margin-left:1rem;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.5rem;
+}
 .element a {
   color: #fff;
   text-decoration: none;
@@ -53,6 +62,7 @@
 }
 .hidden {
   opacity: 0;
+  display: none;
 }
 
 .navmobile span:nth-child(1) {
@@ -102,6 +112,32 @@
   animation-fill-mode: forwards;
   white-space: nowrap;
 }
+.itemsnumber{
+  position: absolute;
+  right: .5rem;
+  width: 25px;
+  height: inherit;
+  background-color: red;
+  border-radius: 50px;
+  color:white;
+  font-size: 1rem;
+  -webkit-box-shadow: 0px 0px 18px 3px rgba(255,0,0,1);
+-moz-box-shadow: 0px 0px 18px 3px rgba(255,0,0,1);
+box-shadow: 0px 0px 18px 3px rgba(255,0,0,1);
+}
+.itemsnumbermobile{
+  position: absolute;
+  left:2.7rem;
+  width: 25px;
+  height: inherit;
+  background-color: red;
+  border-radius: 50px;
+  color:white;
+  font-size: 1rem;
+  -webkit-box-shadow: 0px 0px 18px 3px rgba(255,0,0,1);
+-moz-box-shadow: 0px 0px 18px 3px rgba(255,0,0,1);
+box-shadow: 0px 0px 18px 3px rgba(255,0,0,1);
+}
 .mobileButtons {
   position: relative;
   top: 5rem;
@@ -118,6 +154,11 @@
   position: relative;
   margin-top: 1rem;
 }
+.cartlistphone{
+  position: absolute;
+  left:-2rem;
+  opacity:1;
+}
 .animhamburger span:nth-child(1) {
   animation: inxt;
   animation-duration: 0.2s;
@@ -129,6 +170,9 @@
   animation-fill-mode: forwards;
 }
 .animhamburger span:nth-child(3) {
+  display: none;
+}
+.notshow{
   display: none;
 }
 @media only screen and (max-width: 1280px) {

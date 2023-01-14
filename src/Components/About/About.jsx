@@ -6,7 +6,7 @@ import Footer from "../Footer/Footer";
 const About = () => {
   return (
     <div>
-      <Navbar />
+     
       <Herolinks
         message="About"
         image={"https://wallpapercave.com/wp/wp2884825.jpg"}

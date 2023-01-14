@@ -6,12 +6,17 @@ import { useState } from 'react';
 import Contact from './Components/Contact/Contact';
 import About from './Components/About/About'
 import ProductPage from './Components/Products/ProductPage';
+import CartPage from './Components/CartPage/CartPage';
+import Navbar from './Components/Navbar/navbar';
 function App() {
   return (
     <div className="App">
+      
       <BrowserRouter >
+      <Navbar />
         <Routes>
           <Route path='/' element={<Navigate to="/home" />} />
+          <Route path='/cart' element={<CartPage />  } />
           <Route path='/home' element={<HomePage />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/about' element={<About />} />

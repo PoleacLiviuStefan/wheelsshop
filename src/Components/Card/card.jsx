@@ -2,11 +2,25 @@ import React, { useState } from "react";
 import styles from "./card.module.css";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import ProductPage from "../Products/ProductPage";
+import  {useDispatch} from 'react-redux';
+import {AddCart} from '../../redux/cartSystem';
+import { useEffect } from "react";
+import { useSelector } from 'react-redux'
+const products=[
+
+];
+
+
 export default function Card({ name, image, price }) {
+
   const [appear, setAppear] = useState(false);
   const [productsnumber, setproductsnumber] = useState(0);
   const [number, setNumber] = useState(0);
+  const [nr,setNr]=useState(0)
+  const {carts}=useSelector(item=>item.user || {})
   const navigation = useNavigate();
+  const  dispatch=useDispatch();
+  const item={name,image,price}
   let order = [
     ["name", name],
     ["image", image[0]],
@@ -18,18 +32,14 @@ export default function Card({ name, image, price }) {
   const optiondissapear = () => {
     setAppear(false);
   };
-  const buyitem = () => {
-    setproductsnumber(productsnumber + 1);
-    window.localStorage.setItem(`${order[0][0]}${number}`, order[0][1]);
-    window.localStorage.setItem(`${order[1][0]}${number}`, order[1][1]);
-    window.localStorage.setItem(`${order[2][0]}${number}`, order[2][1]);
 
-    console.log(number);
-  };
   const namepath = name.split(" ").join("-")
   const goToPage = () => {
     navigation(`../${namepath}`, { replace: true });
   };
+  useEffect(()=>{
+setNr(localStorage.getItem(name))
+  },[localStorage.getItem(name)])
   return (
     <div
       onMouseEnter={optionsappear}
@@ -53,14 +63,14 @@ export default function Card({ name, image, price }) {
       </div>
       <div classname={styles.buydetails}>
         <h2 className={styles.pricetag}>{price}$</h2>
-        <button onClick={buyitem} className={styles.buybtn}>
+        <button onClick={()=>dispatch(AddCart(item))} className={styles.buybtn}>
           BUY
         </button>
 
         <input
           className={styles.numberproduct}
           type="number"
-          value={productsnumber}
+          value={nr}
         ></input>
       </div>
     </div>

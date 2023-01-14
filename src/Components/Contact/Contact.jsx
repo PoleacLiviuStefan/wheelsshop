@@ -6,7 +6,7 @@ import Footer from "../Footer/Footer";
 const Contact = () => {
   return (
     <div>
-      <Navbar />
+      
       <Herolinks
         message="Contact"
         image={

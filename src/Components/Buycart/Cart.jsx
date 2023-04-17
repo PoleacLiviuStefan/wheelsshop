@@ -13,18 +13,18 @@ const Cart = ({phone}) => {
     <div className={phone ? styles.containerphone:styles.container}>
         <div className={styles.back} />
   {
-     carts?.map((subItems,sindex)=>{
+     carts?.map((subItem,sindex)=>{
       return <>
       <div className={styles.item}>
-        <div onClick={()=>dispatch(EliminateItem(carts))} className={styles.close}>
+        <div onClick={()=>dispatch(EliminateItem(subItem))} className={styles.close}>
         <BiX />
         </div>
-      <img className={styles.wheelphoto} src={subItems.image[0]} />
-      <h2 className={styles.name}>{subItems.name}</h2>
+      <img className={styles.wheelphoto} src={subItem.image[0]} />
+      <h2 className={styles.name}>{subItem.name}</h2>
       <br></br>
       <div className={styles.details}>
-      <input className={styles.price} value={subItems.price+  " $"}></input>
-      <input className={styles.quantity} value={"x"+subItems.quantity}></input>
+      <input className={styles.price} value={subItem.price+  " $"}></input>
+      <input className={styles.quantity} value={"x"+subItem.quantity}></input>
       </div>
     </div>
     </>

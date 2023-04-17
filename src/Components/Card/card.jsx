@@ -37,9 +37,7 @@ export default function Card({ name, image, price }) {
   const goToPage = () => {
     navigation(`../${namepath}`, { replace: true });
   };
-  useEffect(()=>{
-setNr(localStorage.getItem(name))
-  },[localStorage.getItem(name)])
+
   return (
     <div
       onMouseEnter={optionsappear}
@@ -63,7 +61,7 @@ setNr(localStorage.getItem(name))
       </div>
       <div classname={styles.buydetails}>
         <h2 className={styles.pricetag}>{price}$</h2>
-        <button onClick={()=>dispatch(AddCart(item))} className={styles.buybtn}>
+        <button onClick={()=>{dispatch(AddCart(item));setNr(prev=>prev+=1)}} className={styles.buybtn}>
           BUY
         </button>
 

@@ -64,7 +64,7 @@ export default function Navbar() {
           <div onClick={appearlist} className={styles.element}>
             {" "}
             <div>
-            <div className={localStorage.getItem("productsNumber")==0 ? styles.notshow:styles.itemsnumber } >{carts.length===null ? 0 : carts.length }</div>
+            <div className={localStorage.getItem("productsNumber")==0 ? styles.notshow:styles.itemsnumber } >{carts?.length===0 ? 0 : carts.length }</div>
             <FontAwesomeIcon className="font-awesome" icon={faCartPlus} />{" "}
             </div>  
           </div>
@@ -107,7 +107,7 @@ export default function Navbar() {
             <div onClick={appearlist} className={styles.cartphone}>
             {" "}
             <div>
-            <div className={localStorage.getItem("productsNumber")==0 ? styles.notshow:styles.itemsnumbermobile } >{carts.length===null ? 0 : carts.length }</div>
+            <div className={localStorage.getItem("productsNumber")==0 ? styles.notshow:styles.itemsnumbermobile } >{carts?.length===0 ? 0 : carts.length }</div>
             <FontAwesomeIcon className="font-awesome" icon={faCartPlus} />{" "}
             </div>  
           </div>

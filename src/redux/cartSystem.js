@@ -2,7 +2,7 @@ import {createSlice} from '@reduxjs/toolkit';
 
 const initialState={
     carts:[],
-    quantity:localStorage.getItem("products").length
+    quantity:(localStorage.getItem("products").length===null ? 0 : localStorage.getItem("products").length)
 }
 const cartSystem =createSlice({
     name: "user",
